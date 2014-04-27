@@ -1,0 +1,529 @@
+\documentclass{beamer}
+
+\mode<presentation> {
+  \usetheme{Darmstadt}
+  \setbeamercovered{transparent}
+}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{alltt}
+\usepackage{verbatim}
+\usepackage{hyperref}
+
+%% ulem nos da mayor control de subrayados; \normalem evita que todos
+%% los \em sean subrayados
+\usepackage{ulem}
+\normalem
+
+\newcommand{\confurl}{\url{http://lesthack.com.mx}}
+\newcommand{\authdata}{Jorge Luis Hernández — {\tt lesthack@gmail.com}}
+
+\title{El Proyecto Debian GNU/Linux}
+
+\author{\authdata \\ \confurl}
+
+\institute[S3; Debian]
+{Software Developer And Debian Friend}
+
+\pgfdeclareimage[height=2cm]{debian-logo}{debian-swirl}
+\logo{\pgfuseimage{debian-logo}}
+
+\date[México, 17/09/2011]{Software Freedom Day\\
+  Guanajuato, Septiembre 2011}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Índice Temático}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[¿Qué es Debian?]{¿Qué es Debian?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {¿Qué es Debian?}
+  \begin{itemize}
+  \item Una distribución de Software Libre basada en Linux
+  \item Un proyecto social
+    \begin{itemize}
+    \item Asociación de personas que han hecho causa común para crear un sistema operativo libre.
+    \item Basado en el kernel Linux.
+      \begin{itemize}
+      \item Aunque existe también una implementación del kernel Hurd.
+      \end{itemize}    
+    \item Integra muchas herramientas del proyecto GNU.
+    \end{itemize}
+    \item Extremistas en Control de Calidad
+      \begin{itemize}
+      \item Excelente Metodología de Trabajo Distribuido.
+      \item Alrededor de 880 (aprox) Debian Developers.
+      \item Y 120 (aprox) Debian Maintainers.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {El {\em Sistema Operativo Universal}}
+    \begin{itemize}
+    \item Correr en la mayoría del hardware posible.
+      \begin{itemize}
+      \item Un conjunto de Software Libre que busca ser útil para toda
+      necesidad, sobre cualquier pedazo de hardware posible.
+      \end{itemize}
+    \item Distribución Base para Distribuciones Derivadas o Mezclas Puras.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Debian en el Mundo}
+  \begin{center}
+    Debian es la interacción de miles de personas 
+    \\distribuídas por todo el mundo.
+    \includegraphics[height=14em]{developers_map.jpg}\\
+    {\scriptsize (incluye {\em ruido}, no es un mapa fidedigno)}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Un poco de Historia}
+  \begin{itemize}
+    \item Nace el 16 de Agosto de 1993 (ya es mayor de edad !!)
+    \item Ian Murdock fundador y líder del proyecto.
+    \item El proyecto nace con el concepto de “Distribución”.
+    \item El primer año fue patrocinado por la FSF y el proyecto GNU.
+    \item Fue pensada para:
+      \begin{itemize}
+        \item Ser desarrollada cuidadosamente.
+        \item Y ser mantenida y soportada de forma similar.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Aspectos que Molan}
+  \begin{itemize}
+    \item Sistema “Stable as a rock”.
+    \item Es una distro abierta a las contribucciones de cada desarrollador y usuarios que deseen participar con su trabajo.
+    \item Es una de las pocas distros que NO es una entidad comercial.
+    \item Es un gran proyecto fundamentado y constituido por: 
+      \begin{itemize}
+      \item Un contrato social  
+      \item Documento de directrices que lo organizan.
+      \end{itemize}
+    \item Implementa un sistema inteligente de control de paquetes y dependencias.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Aspectos que No Molan}
+  \begin{itemize}
+    \item Ciclos de Desarrollos Lentos
+    \item Poco pulido y no tan atractivo
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Los Nombres Clave de Debian}
+  \begin{itemize}
+    \item Debian 1.1 (Buzz) :: 17 de junio de 1996
+    \item Debian 1.2 (Rex) :: 12 de diciembre de 1996
+    \item Debian 1.3 (Bo) :: 2 de Junio de 1997
+    \item Debian 2.0 (Hamm) :: 24 de Julio de 1998
+    \item Debian 2.1 (Slinky) :: 9 de Marzo de 1999
+    \item Debian 2.2 (Potato) :: 15 de Agosto de 2000
+    \item Debian 3.0 (Woody) :: 19 de Julio de 2002
+    \item Debian 3.1 (Sarge) :: 6 de Junio de 2005
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Los Nombres Clave de Debian}
+  \begin{itemize}
+    \item Debian 4.0 (Etch) ::  8 de Abril de 2007
+    \item Debian 5.0 (Lenny) :: 14 de Febrero de 2009
+    \pause
+    \item Debian 6.0 (Squeeze) [Stable] :: 6 de Febrero de 2011
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Las Ramas}
+  \begin{itemize}
+    \item Stable (Debian Squeeze)
+    \item Testing (Debian Wheeze) ?
+    \item Unstable (Debian Sid)
+    \item Experimental
+    \item Backports
+    \pause
+    \item main, contrib, non-free
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Documentos fundacionales}
+  \begin{center}
+    Dos de los documentos fundacionales de Debian determinan su
+    identidad; determinan quién lo conforma, y a qué se compromete:
+  \end{center}
+  \begin{enumerate}
+  \item El Contrato Social (SC)
+  \item Las Directrices de Software Libre de Debian (DFSG)
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {El Contrato Social (SC)}
+  \begin{center}
+    ¿A qué se compromete Debian ante sus usuarios?
+  \end{center}
+  \begin{itemize}
+    \item Debian permanecerá siendo 100\% Software Libre 
+    \item Contribuiremos de vuelta a la comunidad del Software Libre
+    \item No esconderemos problemas
+    \item Nuestras prioridades son nuestros usuarios y el Software Libre 
+    \item Programas que no cumplen nuestros lineamientos de qué es
+      Software Libre pero son libremente redistribuíbles {\em pueden}
+      formar parte de nuestro archivo y usar {\em parte} de nuestra
+      infraestructura, pero en una sección que indica claramente que
+      no son libres, y {\em no serán considerados parte de Debian}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Directrices de Software Libre de Debian (DFSG)}
+  \begin{center}
+    ¿Y qué reconoce Debian como Software Libre?
+  \end{center}
+  \begin{itemize}
+    \item Libre Distribución
+    \item Código Fuente
+    \item Trabajos Derivados
+    \item Integridad del código del autor
+    \item No discriminación contra personas o grupos
+    \item No discriminación en función de la finalidad perseguida
+    \item Distribución de la Licencia
+    \item La licencia no ha de ser especifica para Debian
+    \item La licencia no debe contaminar a otros programas
+    \item Ejemplos de licencias: GPL, BSD, Artistica
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {¿Qué lleva a una persona a comprometerse con Debian?}
+  \begin{center}
+    Ser reconocido como miembro del proyecto (DD) es un proceso largo
+    y complejo. ¿Qué ha llevado a tanta gente a seguirlo?
+  \end{center}
+  \begin{itemize}
+  \item Identificación con los fines del proyecto
+  \item Necesidad de contribuir con {\em algún} proyecto libre
+  \item Incidir en o mejorar al rendimiento de Debian en determinado
+    campo de aplicación
+  \item Impulsar un proyecto personal incluyéndolo en una distribución
+    relevante
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[Colaboración]{Colaboración y Estructura Social}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Niveles de Contribución}
+  \begin{itemize}
+  \item Desarrollador (DD) (+proceso NM)
+  \item Mantenedor (DM)
+  \item Mantenedor (Con sponsors)
+  \item Traductor, Documentador
+  \item Artista
+  \item Abogados, Asesores
+  \item ¿ Como permitir la participación directa, como miembros con todos los derechos, a gente no técnica ?
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+  \frametitle {Niveles de Contribución}
+  \includegraphics[width=28em]{debian-organigram.png}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {¿Y qué lleva a una persona a preferir {\em utilizar}
+    Debian?}
+  \begin{center}
+    Por otro lado, por qué {\em prefieres utilizar} Debian?
+
+    Podemos resumir esto en tres grandes rubros
+  \end{center}
+  \begin{itemize}
+  \item Factores técnicos
+  \item Factores ideológicos
+  \item Factores pragmáticos
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Factores técnicos}
+  \begin{itemize}
+  \item Ideas inovadoras introducidas por Debian (p.ej. {\tt apt}),
+    configuración orientada a directorios, {\em instale y use}, etc.
+  \item Componentes de infraestructura: lintian, buildd, debhelper
+  \item Multiples Alternativas al mismo problema
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Factores ideológicos}
+  \begin{itemize}
+  \item Una de las ya muy pocas distribuciones 100\% impulsadas por
+    una comunidad
+    \begin{itemize}
+      \item En contraposición del impulso de una empresa
+      \item Factores de libertad del proyecto respecto a una agenda
+      \item Viabilidad a largo plazo
+      \item Baja relevancia de la {\em cuota de mercado}
+    \end{itemize}
+  \item Posición coherente y sin compromisos respecto a la libertad
+    del software
+    \begin{itemize}
+      \item Limpieza del kernel de {\em blobs binarios} — Una tarea
+        ardua, ingrata, sin ninguna {\em ventaja comercial} realizada
+        a lo largo de años
+      \item Posición consistente respecto a patentes de software,
+        codecs e intérpretes propietarios
+      \item Renuencia a incluir software restringido, sin importar que
+        sea de alta demanda — Logrando en varios casos incidir en su
+        relicenciamiento como Software Libre
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Factores pragmáticos}
+  \begin{itemize}
+  \item Es la única distribución que funciona del mismo modo en todos
+    mis dispositivos (multi-arquitectura)
+  \item Rendimiento aceptable en sistemas de bajos recursos
+  \item Garantía de poder derivar de/reutilizar al 100\% de la
+    distribución
+  \item Mera disponibilidad de decenas de miles de paquetes
+    independientes (29,000)
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Proyectos derivados}
+  \begin{itemize} 
+  \item Numerosos proyectos a lo largo de los años se han basado en
+    Debian, para evitar {\em reinventar la rueda} y para aprovechar
+    control de calidad, seguridad
+  \item Distribuciones de todo tipo — Nacionales (LinEx, Limux,
+    GuadaLinex…), comerciales (Progeny, Corel, Xandros, Ubuntu…),
+    comunitarias con un enfoque específico (Skolelinux, Quantian,
+    Trisquel, …)
+  \item Debian busca y fomenta este tipo de especialización, creando
+    los {\em marcos} para su organización como {\em Custom Debian
+      Distribution} o {\em Pure Debian Blend}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Integrando los esfuerzos de terceros}
+  \begin{itemize} 
+  \item Buscamos que a estas distribuciones derivadas les sea fácil
+    contribuir de vuelta, reducir las divergencias — Y en líneas
+    generales, lo logramos
+  \item Debian ha logrado evitar la explosión sin regreso que marcó a
+    las distribuciones derivadas de RedHat en los 1990s, buscando
+    ofrecer las herramientas para una ágil reintegración
+  \item Incluso en el caso de las distribuciones con divergencias más
+    pronunciadas y frecuentes (como Ubuntu), con el paso de los años
+    hemos ido encontrando canales adecuados para colaborar
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[QA]{Control de Calidad}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Debian y el control de calidad}
+  \begin{itemize} 
+    \item Debian tiene la fase de pruebas más prolongada y estricta de
+      todas las distribuciones. 
+    \item Miles de usuarios prueban el software y reportan fallos
+      antes de liberar una nueva versión. 
+    \item Hoy por hoy Debian es, sin duda, la distribución de Linux
+      que más cuida el control de calidad 
+      \begin{itemize}
+      \item Llegando a niveles que muchos tildan de absurdos
+      \item Exigimos {\em cero bugs graves} para la liberación de una
+        nueva versión
+      \item Muchas importantes decisiones se toman {\em por consenso},
+        y muchas veces es dificil llegar a él
+      \item Nos ha llevado a tiempos de liberación de hasta tres
+        años. 
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {Ciclo de Empaquetado}
+  \begin{itemize} 
+  \item El Upstream libera el Software
+  \item El mantenedor lo revisa, añade parches y archivos de control (empaqueta).
+  \item buildd lo construye para las diferentes arquitecturas
+  \item unstable - testing (estabilicación) - stable (liberación)
+  \item No es magia y no se hace solo
+  \pause
+  \item Y no es tan sencillo
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{center}
+  \frametitle {Ciclo de Empaquetado}
+  \includegraphics[width=25em]{debian_package_cycle.png}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {BTS Bug Tracking System}
+  \begin{itemize}  
+  \item Un sistema tan complejo debe llevar un registro de todo el proceso
+  \item No remplaza el BTS del Upstream, pero si interactua con el
+  \item Es un complejo sistema controlado por mails
+    \begin{itemize}
+    \item Mensajes entre quien reporta, el sistema y el mantenedor del paquete
+    \item Etiquetas, gravedad, suscripciones    
+    \end{itemize}
+  \item reportbug-ng por si le temes al correo electrónico
+  \end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section[Traducción]{Ciclo de Traducción}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \begin{itemize}
+  \item Un robot atiende los correos enviados a la lista de traducción.
+  \item El robot supervisa los correos enviados y gestiona el siguiente paso.
+  \item El traductor indica que se va a hacer cargo de una traducción.
+  \item El traductor envia la traducción para que sea revisada.
+  \item Una vez revisada, la traducción es enviada al BTS para ser incorporada.
+  \item El mantenedor incorpora la traducción, la errata y la cierra.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {ITT - Intent to Translate (Intento de Traducción)}
+  \begin{itemize}
+  \item Se envía para indicar que se va a trabajar en una traducción, evitando la duplicación de esfuerzos.  
+  \item Tipos:
+    \begin{itemize}
+      \item po-debconf://nombrepaquete 
+      \item po://nombrepaquete/rutapaquetefuente
+      \item debian-installer://nombrepaquete/rutapaquetefuente 
+      \item wml://direcciónpágina 
+      \item man://nombrepaquete/sección/tema 
+    \end{itemize}
+  \item Mala Forma: 
+    \begin{itemize}
+    \item Subject: Me hago cargo de la traducción po-debconf de exim4 
+    \end{itemize}
+  \item Forma indicada:
+     \begin{itemize}
+    \item Subject: [ITT] po-debconf://exim4 
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {RFR - Request For Review (Solicitud de revisión)}
+  \begin{itemize}
+  \item La traducción se ha terminado y, adjunto al correo, se envíe para que otras personas puedan revisarla y detectar errores.
+  \item Le sigue en algunos casos un RFR2 si se realizan cambios sustanciales.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {LCFC - Last Chance For Comments (última oportunidad)}
+  \begin{itemize}
+  \item Indica que la traducción se ha terminado, se han incorporado los cambios del proceso de revisión y se enviará en breve al lugar apropiado.
+  \item Se pueden enviar cuando no hay ITR
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {BTS - Bug Tracking System}
+  \begin{itemize}
+  \item Indica que se ha registrado una errata con respecto a la traducción en el BTS.
+  \item Cada día el robot comprobará si el informe de error sigue o no abierto.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle {DONE - Hecho}
+  \begin{itemize}
+  \item Indica que la traducción ya se ha hecho.
+  \item O bien se ha arreglado la errata enviada al BTS.
+  \item O bien la traducción ya no aplica (el paquete se ha borrado, se ha abandonado el trabajo, etc.).
+  \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{¿Dudas?}
+  \vskip 2em
+  {\Large ¡Gracias!}
+  \vskip 1em
+  \authdata \\ \confurl
+\end{frame}
+
+\end{document}

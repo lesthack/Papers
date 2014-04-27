@@ -1,0 +1,347 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+body {
+	background:#fff;
+	font-family: Trebuchet MS;
+}
+.template{
+	display:none;
+	width: 1024px;
+	height: 768px;
+	margin:auto;
+	padding:10px;
+	border:1px solid #999;
+	-webkit-border-radius:6px;
+}
+#footer{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	height:30px;
+	background:#666;
+}
+#slide1{
+	padding-left:150px;
+}
+#slide1 h1{
+	letter-spacing:-5px;
+	margin-top: 150px;
+	font-size: 90px;
+	color: #FFD700;
+}
+#slide1 h1 span.gnu{
+	color: #FF4500;
+}
+#slide1 h1 span.linux{
+	color: #9ACD32;
+}
+#slide1 h2{
+	font-size: 40px;
+	line-height:10px;
+	color: #999;
+}
+#slide1 #datos_personales{
+	margin-top: 50px;
+	margin-left: 200px;
+}
+#slide1 h3{
+	padding:1px 20px;
+	font-size: 30px;
+}
+#slide1 h4{
+	padding:1px 20px;
+	font-size: 20px;
+}
+#slide1 h5{
+	padding:1px 20px;
+	font-size: 40px;
+}
+#slide1 .hover{
+	-moz-border-radius: 11px 0px 0px 11px;
+	-webkit-border-radius: 11px 0px 0px 11px;
+	background:#333;
+	color: #FFF;
+}
+#slide2 h1{
+	text-align:center;
+	font-size: 80px;
+	margin-top:20px;
+	color: #DDD;
+}
+#slide2 h1#step5{
+	margin-top:15%;
+}
+#slide2 h1.hover{
+	color:#4682B4;
+	font-size:100px;
+}
+#slide2 img#image1{
+	display:none;
+	position:relative;
+	left:700px;
+	top:-50px;
+	z-index:-1;
+}
+#slide3 h1{
+	margin-top:120px;
+	font-size:110px;
+	margin-left:20px;
+}
+#slide3 h1 span{
+	font-size:40px;
+}
+#slide3 h2{
+	font-size: 70px;
+	line-height:10px;
+	margin-left:20px;
+}
+#slide3 h3{
+	font-size: 130px;
+	text-align:right;
+	margin-right:100px;
+}
+#slide4 h1{
+	display:none;
+	margin-top:120px;
+	font-size: 60px;
+}
+#slide4 h1 span{
+	font-weight:bold;
+	font-size: 90px;
+}
+#slide4 img{
+	margin-left:50px;
+	margin-top:120px;
+	float:left;
+}
+#slide5 #step12{
+	float:left;
+	margin-top:300px;
+	margin-left:270px;
+	width: 150px;
+	display:none;
+}
+#slide5 #step13{
+	float:left;
+	margin-top:400px;
+	margin-left:100px;
+	width: 150px;
+	display:none;
+}
+#slide5 #step14{
+	position: left;
+	margin-top:380px;
+	margin-left:100px;
+	width: 150px;
+	display:none;
+}
+#slide5 #step15{
+	position:relative;
+	width: 350px;
+	top:-450px;
+	display:none;
+}
+#slide5 #step16{
+	float:left;
+	width:550px;
+	margin-top:100px;
+	margin-left:220px;
+	display:none;
+}
+#slide5 #step17{
+	margin-top:100px;
+	margin-left:220px;
+	float:left;
+	width:600px;
+	display:none;
+}
+#slide5 #step18{
+	margin-top:100px;
+	margin-left:220px;
+	float:left;
+	width:600px;
+	display:none;
+}
+#slide5 .receta{
+	position:absolute;
+	width:80px;
+	top:400px;
+	display:none;
+}
+#slide5 #step19{
+	left:620px;	
+}
+#slide5 #step20{
+	left:800px;	
+}
+#slide5 #step21{
+	left:1024px;	
+}
+#slide6 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:60px;
+}
+#slide6 ol{
+	margin-left:150px;
+	margin-top:50px;
+	font-size:40px;
+}
+#slide6 li{
+	margin-top:30px;
+	display:none;
+}
+#slide7 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:60px;
+}
+#slide7 div{
+	margin-top:100px;
+	display:none;
+}
+#slide7 div h2{
+	text-align: center;
+	font-size:30px;
+}
+#slide7 #step27{
+	float:left;
+}
+#slide7 #step28{
+	float:right;
+}
+#slide7 #step28 img{
+	width:300px;
+}
+#slide7 #step29{
+	float:left;
+	margin-left:85px;
+	margin-top:160px;
+}
+#slide8 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:60px;
+}
+#slide8 ol{
+	margin-left:150px;
+	margin-top:50px;
+	font-size:40px;
+}
+#slide8 li{
+	margin-top:30px;
+	display:none;
+}
+#slide8 #step32, #slide8 #step36{
+	position:relative;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	width:100%;
+	display:none;
+}
+#slide8 #step32{
+	top:-300px;
+}
+#slide8 #step36{
+	top:-500px;
+}
+#slide9 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:40px;
+}
+#slide9 a{
+	text-align:center;
+}
+#slide10 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:40px;
+}
+#slide10 div{
+	margin-top:90px;
+	display:none;
+}
+#slide10 div h2{
+	text-align: center;
+}
+#slide10 #step39{
+	float:left;
+}
+#slide10 #step40{
+	float:right;
+}
+#slide10 #step41{
+	font-size:120px;
+	font-weight:bold;
+	color:red;
+	text-align:center;
+	width:320px;
+	float:left;
+}
+#slide11 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:40px;
+}
+#slide11 div{
+	display:none;
+	float:right;
+	margin-top:50px;
+	margin-right:100px;
+}
+#slide11 div h2{
+	float:right;
+	font-size:80px;
+	color:#333;
+}
+#slide11 div img{
+	float:right;
+}
+#slide12 h1{
+	margin-top:15px;
+	margin-left:50px;
+	margin-bottom:90px;
+	font-size:40px;
+}
+#slide12 h2{
+	text-align:center;
+}
+#slide12 #step46{
+	float:left;
+	display:none;
+}
+#slide12 #step47{
+	padding-top:70px;
+	padding-left:20px;
+	float:left;
+	display:none;
+}
+#slide12 h3{
+	font-size:40px;
+	color:#CCC;
+}
+#slide12 h3.hover{
+	color:#000;
+	font-size:50px;
+}
+#slide13 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:40px;
+}
+#slide14 h1{
+	margin-top:15px;
+	margin-left:50px;
+	font-size:40px;
+}
+
+#slide16 h1{
+	margin-top:150px;
+	margin-left:120px;
+	font-size:80px;
+}

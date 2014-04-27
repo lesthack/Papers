@@ -1,0 +1,165 @@
+<html xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>GNU/Linux :: Una mirada al Software Libre</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link type="text/css" href="css/style.css" rel=stylesheet>
+	<script src="javascript/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="javascript/jquery-ui-1.8.5.custom.min.js" type="text/javascript"></script>
+	<script src="javascript/util.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="template" id="slide1">
+		<h1><span class="gnu">GNU</span>/<span class="linux">Linux</span></h1>
+		<h2>Una mirada al Software Libre</h2>
+		<div id="datos_personales">
+			<h3 id="step1">Jorge Luis Hernández C.</h3>
+			<h4 id="step2">lesthack@gmail.com</h4>
+			<h5 id="step3">@lesthack</h5>
+		</div>
+	</div>
+	<div class="template" id="slide2">
+		<h1 id="step5">Software Libre</h1>
+		<h1 id="step6">Free Software</h1>
+		<h1 id="step7">Software Gratis</h1>
+		<img id="image1" src="images/question.png" alt="?" />
+	</div>
+	<div class="template" id="slide3">
+		<h1><span>El</span> Software Libre</h1>
+		<h2><span>No</span> es necesariamente</h2>
+		<h3>Gratis</h3>
+	</div>
+	<div class="template" id="slide4">
+		<img id="step9" src="images/Homero.gif" />
+		<h1 id="step10">¿Que es el <span>Software Libre</span>?</h1>
+	</div>
+	<div class="template" id="slide5">
+		<img id="step12" src="images/image1.png" />
+		<img id="step13" src="images/image2.png" />
+		<img id="step14" src="images/image3.png" />
+		<img id="step15" src="images/image4.png" />
+		<img id="step16" src="images/image5.png" />
+		<img id="step17" src="images/image6.png" />
+		<img id="step18" src="images/image7.png" />
+		<img id="step19" src="images/image8.png" class="receta" />
+		<img id="step20" src="images/image8.png" class="receta" />
+		<img id="step21" src="images/image8.png" class="receta" />
+	</div>
+	<div class="template" id="slide6">
+		<h1>Las 4 libertades</h1>
+		<ol>
+			<li id="step22">Libertad de ejecutar el programa, para cualquier proposito</li>
+			<li id="step23">Libertad de estudiar cómo trabaja el programa, y cambiarlo para que haga lo que usted quiera</li>
+			<li id="step24">Libertad de redistribuir copias para que pueda ayudar al prójimo</li>
+			<li id="step25">Libertad de mejorar el programa y publicar sus mejoras</li>
+		</ol>
+	</div>
+	<div class="template" id="slide7">
+		<h1>¿ Quien lo puede usar ?</h1>
+		<div id="step27">
+			<img src="images/tbbt.jpg" />
+			<h2>¿ Nerds ?</h2>
+		</div>
+		<div id="step29">
+			<img src="images/world.gif" />
+			<h2>¡ Todo el mundo !</h2>
+		</div>
+		<div id="step28">
+			<img src="images/dilbert.gif" />
+			<h2>¿ Geeks ?</h2>
+		</div>
+	</div>
+	<div class="template" id="slide8">
+		<h1>...y que Ventajas tiene ?</h1>
+		<ol>
+			<li id="step30">Libertad</li>
+			<li id="step31">Seguridad y Estabilidad</li>
+			<li id="step33">Soporte Multinucleos</li>
+			<li id="step34">Adios Cracks y Serials</li>
+			<li id="step35">Sin Virus</li>
+			<li id="step37">Amplio Campo en Desarrollo</li>
+		</ol>
+		<img id="step32" src="images/windows.png" />
+		<img id="step36" src="images/virus.png" />
+	</div>
+	<div class="template" id="slide9">
+		<h1>¿...y si Matrix corriera sobre windows ?</h1>
+		<div style="text-align:center;">
+		<video 
+			controls="flase"  
+			style="width:800px; height:600px;" 
+			name="media" 
+			src="videos/matrix.mp4">
+		</video>
+		</div>
+	</div>
+	<div class="template" id="slide10">
+		<h1>Érase una vez...</h1>
+		<div id="step38">
+			<img src="images/stallman.jpg" style="width:350px; height:500px;" />
+			<h2>Richard Stallman</h2>
+		</div>
+		<div id="step40">
+			+
+		</div>
+		<div id="step39">
+			<img src="images/torvalds.jpg" style="width:350px; height:500px;" />
+			<h2>Linus Torvalds</h2>
+		</div>
+	</div>
+	<div class="template" id="slide11">
+		<h1>Ya quiero probarlo !!</h1>
+		<div id="step42">
+			<img src="images/ubuntu.jpg" />
+			<h2>Ubuntu</h2>
+		</div>
+		<div id="step43">
+			<img src="images/fedora.png" />
+			<h2>Fedora</h2>
+		</div>
+		<div id="step44">
+			<img src="images/debian.png" />
+			<h2>Debian</h2>
+		</div>
+	</div>
+	<div class="template" id="slide12">
+		<h1>¿ y México ?</h1>
+		<div id="step46">
+			<img src="images/icaza.jpg" style="width:500px;" />
+			<h2>Miguel de Icaza</h2>
+		</div>
+		<div id="step47">
+			<h3 id="step48">Midnight Commander</h3>
+			<h3 id="step49">Gnumeric</h3>
+			<h3 id="step50">Gnome</h3>
+			<h3 id="step51">Mono</h3>
+		</div>
+	</div>
+	<div class="template" id="slide13">
+		<h1>Gnome</h1>
+		<div style="text-align:center;margin-top:50px;">
+		<a href="videos/ubuntu.mp4" target="_black">
+			<img src="images/gnome.png" style="width:800px;" />
+		</a>
+		</div>
+	</div>
+	<div class="template" id="slide14">
+		<h1>KDE</h1>
+		<div style="text-align:center;margin-top:50px;">
+		<a href="videos/KDE.mp4" target="_black">
+			<img src="images/kde.png" style="width:800px;" />
+		</a>
+		</div>
+	</div>
+	<div class="template" id="slide15">
+		<h1>OpenOffice</h1>
+		<div style="text-align:center;margin-top:50px;">
+	<a href="videos/openoffice.mp4" target="_black">
+			<img src="images/openoffice3.jpg" style="width:800px;" />
+		</a>
+		</div>
+	</div>
+	<div class="template" id="slide16">
+		<h1>y ahora que ?</h1>
+	</div>
+</body>
+</html>

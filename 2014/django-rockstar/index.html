@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Django: el rockstar de los web developers</title>
+
+        <meta name="description" content="Conferencia FLISoL Queretaro 2014 - Django: el rockstar de los web developers">
+        <meta name="author" content="Jorge Luis Hernandez C.">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        
+        <style type="text/css">
+            li:hover{
+                background: #DEE;
+            }
+            ol.left{
+                display: inherit;
+            }
+            div.layer{
+                border: 1px solid #999;
+                padding: 10px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            div.layer p{
+                font-size: 70%;
+            }
+            div.layer50{
+                width: 43%;
+                display: inline-block;
+            }
+            div.layer30{
+                width: 25%;
+                display: inline-block;
+                font-size: 60%;
+            }
+            div.layer p:hover{
+                background: #DEE;
+            }
+        </style>
+        
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+        	if( window.location.search.match( /print-pdf/gi ) ) {
+        		var link = document.createElement( 'link' );
+        		link.rel = 'stylesheet';
+        		link.type = 'text/css';
+        		link.href = 'css/print/pdf.css';
+        		document.getElementsByTagName( 'head' )[0].appendChild( link );
+        	}
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Django</h1>
+                    <h3>El rockstar de los web developers</h3>
+                    <p>
+                        <small>Por <a href="http://lesthack.com.mx">Jorge Luis Hernández C.</a> / <a href="http://twitter.com/lesthack">@lesthack</a></small>
+                    </p>
+                </section>
+                <section>
+                    <h2 class="left">Jorge Luis Hernandez</h2>
+                    <hr/>
+                    <p class="fragment left indent">ISC :: <a href="#">Tecnológico de Celaya</a></p>
+                    <p class="fragment left indent">Traductor <a href="#">Debian GNU/Linux</a></p>
+                    <p class="fragment left indent"><a href="#">XMMS2</a> & <a href="#">Azucar</a></p>
+                    <p class="fragment left indent">Organizador FLISoL Celaya</p>
+                    <p class="fragment left indent">Coordinador Nacional <a href="#">FLISoL</a> desde 2013</p>
+                    <p class="fragment left indent">Propulsor activo del Software Libre</p>
+                </section>                
+                <section>
+                    <h2>Temática</h2>
+                    <ol>
+                        <li class="fragment">Desarrollo de Web Apps.</li>
+                        <li class="fragment">Modelos de desarrollo.</li>
+                        <li class="fragment">Escalamiento.</li>
+                    </ol>                    
+                </section>
+                <section>
+                    <h2>¿A quien va dirigida?</h2>
+                    <ul>
+                        <li class="fragment">Programadores - Developers</li>
+                        <li class="fragment">Testers.</li>
+                        <li class="fragment">Analistas.</li>
+                        <li class="fragment">Aquitectos.</li>
+                        <li class="fragment">¿Diseñadores? <b class="fragment">No, a ellos no :(</b></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Conocimientos previos.</h2>
+                    <ol>
+                        <li class="fragment">Conocimientos básicos de programación (En cualquier lenguaje).</li>
+                        <li class="fragment">Ganas de aprender algo nuevo.</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Disclaimer</h2>
+                    <ol>
+                        <li class="fragment">Esto no es un taller o curso de programación.</li>
+                        <li class="fragment">Se admiten mujeres.</li>
+                        <li class="fragment">Pregunta cuanto tengas dudas.</li>
+                        <li class="fragment">¿Admitimos a .Neteros? <b class="fragment">Si</b></li>
+                        <li class="fragment">¿Que opino de Ruby on Rails?</li>
+                    </ol>
+                </section>
+                <section class="stack" data-background="images/django1.jpg">
+                    <h1 class="center" style="color: #FFF;">¿Que es Django?</h1>
+                </section>
+                <section>
+                    <h2>Sobre Django</h2>
+                    <ol>
+                        <li class="fragment">
+                            Web Framework
+                            <blockquote cite="https://www.djangoproject.com/">
+                                The Web framework for perfectionists with deadline.
+                            </blockquote>
+                        </li>
+                        <li class="fragment">Python 2.x y 3.x</li>                        
+                        <li class="fragment">(Model Template View) Modelo Vista Plantilla</li>
+                        <li class="fragment">(Object Relation Mapping) ORM Integrado</li>
+                        <li class="fragment">URL's elegantes</li>
+                        <li class="fragment">Internacionalización</li>
+                        <li class="fragment">Interfaz Administrativa integrada</li>
+                        <li class="fragment">Sistema de Cache integrado</li>
+                    </ol>
+                    <p class="fragment">¿ Mucha información ?</p>                    
+                </section>
+                <section data-background="images/cero.jpg">
+                    <h2>Empecemos de cero</h2>
+                </section>
+                <section>
+                    <section>
+                        <h3 class="left">Aprendamos Python</h3>
+                        <p class="left">¿Que necesitamos?</p>
+                        <ol class="left" style="font-size: 80%;">
+                            <li class="indent fragment">
+                                Definición de:
+                                <ol>
+                                    <li class="indent">Tipos de Datos</li>
+                                    <li class="indent">Variables</li>
+                                    <li class="indent">Constantes</li>                                
+                                    <li class="indent">Arreglos</li>
+                                    <li class="indent">Listas</li>
+                                    <li class="indent">Diccionarios</li>                            
+                                </ol>
+                            </li>
+                            <li class="indent fragment">
+                                Estructuras
+                                <ol>
+                                    <li class="indent">Decisión: IF, ELSE, CASE</li>
+                                    <li class="indent">Ciclos: FOR, WHILE, DO-WHILE</li>                                
+                                </ol>
+                            </li>
+                            <li class="indent fragment">
+                                "Avanzado"
+                                <ol>
+                                    <li class="indent">Funciones</li>
+                                    <li class="indent">Clases-Objetos</li>                                
+                                </ol>
+                            </li>
+                        </ol>                        
+                    </section>
+                    <section style="font-size: 90%;">
+                        <h3 class="left">Ejemplos</h3>
+                        <ol class="left">
+                            <li class="fragment">Hola mundo
+                                <pre>
+                                    <code data-trim class="python">
+#!/usr/bin/python
+
+print "Hola mundo"
+                                    </code>
+                                </pre>
+                            </li>
+                            <li class="fragment">Definiciones
+                                <pre>
+                                    <code data-trim class="python">
+nombre = "Juan"
+edad = 12
+peso = 82.5
+                                    </code>
+                                </pre>
+                            </li>
+                            <li class="fragment">Tuplas, Listas y Diccionarios
+                                <pre>
+                                    <code data-trim class="python">
+musica = ("rock", "metal", "clasica")
+colores = ["azul", "rojo", "verde"]
+usuarios_emails = {
+    "juan": "juan@gmail.com",
+    "jorge": "j.torres@gmail.com"
+}
+                                    </code>
+                                </pre>
+                            </li>                            
+                        </ol>
+                    </section>
+                    <section style="font-size: 90%;">
+                        <ol class="left">
+                            <li class="fragment">Funciones
+                                <pre>
+                                    <code data-trim class="python">                            
+def suma(a, b):
+    return a+b
+                                    </code>
+                                </pre>
+                            </li>
+                            <li class="fragment">Ciclos
+                                <pre>
+                                    <code data-trim class="python">                            
+for i in range(100):
+    print i
+
+while n > 0:
+    n = n - 1    
+                                    </code>
+                                </pre>
+                            </li>
+                            <li class="fragment">Decisiones
+                                <pre>
+                                    <code data-trim class="python">                            
+if edad > 18:
+    print "Eres mayor de edad" 
+else:
+    print "Lo siento, aun eres un niñato"
+                                    </code>
+                                </pre>
+                            </li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Aprender mas sobre python</h2>
+                        <a href="http://mundogeek.net/tutorial-python/">Python para todos - Raul González Duque</a>
+                    </section>
+                    <section>
+                        <h2 class="left">El zen de python</h2>
+                        <ol class="left" style="font-size: 25px; line-height: 28px;">
+                            <li>Bello es mejor que feo.</li>
+                            <li>Explícito es mejor que implícito.</li>
+                            <li>Simple es mejor que complejo.</li>
+                            <li>Complejo es mejor que complicado.</li>
+                            <li>Plano es mejor que anidado.</li>
+                            <li>Disperso es mejor que denso.</li>
+                            <li>La legibilidad cuenta.</li>
+                            <li>Los casos especiales no son tan especiales como para quebrantar las reglas.</li>
+                            <li>Aunque lo práctico gana a la pureza.</li>
+                            <li>Los errores nunca deberían dejarse pasar silenciosamente.</li>
+                            <li>A menos que hayan sido silenciados explícitamente.</li>
+                            <li>Frente a la ambigüedad, rechaza la tentación de adivinar.</li>
+                            <li>Debería haber una -y preferiblemente sólo una- manera obvia de hacerlo.</li>
+                            <li>Aunque esa manera puede no ser obvia al principio a menos que usted sea holandés.</li>
+                            <li>Ahora es mejor que nunca.</li>
+                            <li>Aunque <i>nunca</i> es a menudo mejor que <i>ya mismo</i>.</li>
+                            <li>Si la implementación es difícil de explicar, es una mala idea.</li>
+                            <li>Si la implementación es fácil de explicar, puede que sea una buena idea.</li>
+                            <li>Los espacios de nombres (<i>namespaces</i>) son una gran idea ¡Hagamos más de esas cosas!</li>
+                        </ol>
+                    </section>
+                </section>
+                <section>
+                    <h3>La arquitectura de una aplicación Django</h3>
+                    <div class="layer fragment">
+                        <p>Sistema Operativo (GNU/Linux)</p>
+                        <div class="layer fragment">
+                            <p>Base de Datos</p>
+                        </div>
+                        <div class="layer fragment">
+                            <p>HTTP Server</p>
+                        </div>
+                        <div class="layer fragment">
+                            <p>Python</p>
+                            <div class="layer fragment">
+                                <p>Virtualenvwrapper</p>
+                                <div class="layer layer50 fragment">
+                                    <p>Django 1.4</p>
+                                    <div class="layer" style="font-size: 60%;">
+                                        <p>Djanto-Extensions</p>
+                                    </div>
+                                    <div class="layer layer30">
+                                        <p>ORM</p>
+                                    </div>
+                                    <div class="layer layer30">
+                                        <p>Templates</p>
+                                    </div>
+                                    <div class="layer layer30">
+                                        <p>Views</p>
+                                    </div>
+                                </div>
+                                <div class="layer layer50 fragment">
+                                    <p>Django 1.6</p>
+                                    <div class="layer" style="font-size: 60%;">
+                                        <p>South</p>
+                                    </div>
+                                    <div class="layer layer30">
+                                        <p>ORM</p>
+                                    </div>
+                                    <div class="layer layer30">
+                                        <p>Templates</p>
+                                    </div>
+                                    <div class="layer layer30">
+                                        <p>Views</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <section style="font-size: 90%;">
+                    <section>
+                        <h3>Estructura de un proyecto Django</h3>
+                        <div class="fragment left">
+                            <p>Creando un proyecto</p>
+                            <pre>
+                                <code data-trim class="bash">
+                                $ django-admin.py startproject mysite
+
+    mysite/
+        manage.py
+        mysite/
+            __init__.py
+            settings.py
+            urls.py
+            wsgi.py
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="fragment left">
+                            <p>Deployment Modo Dev</p>
+                            <pre>
+                                <code data-trim class="bash">
+                                $ ./manage.py runserver
+    Validating models...
+
+    0 errors found
+    April 25, 2014 - 11:00:00
+    Django version 1.6.3, using settings 'mysite.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.                            
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Estructura de un proyecto Django</h3>
+                        <div class="left">
+                            <p>Hermosas pantallas de depuración</p>
+                            <img src="images/runserver.png" style="border: 0px;" />
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Estructura de un proyecto Django</h3>
+                        <div class="left">
+                            <p>Aplicaciones</p>
+                            <pre>
+                                <code data-trim class="bash">
+                                $ python manage.py startapp polls
+
+polls/
+    __init__.py
+    admin.py
+    models.py
+    tests.py
+    views.py                                
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="left">
+                            <p>Validación</p>
+                            <pre>
+                                <code data-trim class="bash">
+                                $ python manage.py validate
+0 errors found                                
+                                </code>
+                            </pre>
+                        </div>                        
+                    </section>
+                    <section>
+                        <h3>Estructura de un proyecto Django</h3>
+                        <div class="left">
+                            <p>Sincronización</p>
+                            <pre>
+                                <code data-trim class="bash">
+                                $ python manage.py syncdb
+
+Creating tables ...
+Creating table django_admin_log
+Creating table auth_permission
+Creating table auth_group_permissions
+Creating table auth_group
+Creating table auth_user_groups
+Creating table auth_user_user_permissions
+Creating table auth_user
+Creating table django_content_type
+Creating table django_session
+
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username (leave blank to use 'lesthack'):    
+Email address: lesthack@gmail.com
+Password: 
+Password (again): 
+Superuser created successfully.
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Estructura de un proyecto Django</h3>
+                        <div class="left">
+                            <p>Autenticación</p>
+                            <img src="images/login.png" style="border: 0px;" />
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Estructura de un proyecto Django</h3>
+                        <div class="left">
+                            <p>Panel de Administración</p>
+                            <img src="images/admin.png" style="border: 0px;" />                            
+                        </div>
+                    </section>
+                </section>               
+                <section>
+                    <h3>El modelo Django</h3>
+                    <div class="fragment left">
+                        <p>models.py</p>
+                        <pre>
+                                <code data-trim class="python">
+from django.db import models
+
+class encuesta(models.Model):
+    nombre = models.CharField(max_length=200)
+
+class pregunta(models.Model):
+    encuesta = models.ForeignKey(encuesta)
+    pregunta_text = models.CharField(max_length=200)
+    fecha = models.DateTimeField(auto_now_add = True)
+                                </code>
+                        </pre>
+                    </div>
+                    <div class="fragment left">
+                        <p>Uso</p>
+                        <pre>
+                            <code data-trim class="python">
+mipregunta = pregunta.objects.get(id=1)
+mipregunta.encuesta.nombre
+                            </code>
+                        </pre>
+                    </div>
+                </section>
+                <section>
+                    <section>
+                        <h3>Las vistas Django</h3>
+                        <div class="fragment left">
+                            <p>urls.py</p>
+                            <pre>
+                                <code data-trim class="python">
+from django.conf.urls import url
+from polls import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^otro/$', views.index, name='index')
+]                            
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="fragment left">
+                            <p>views.py</p>
+                            <pre>
+                                    <code data-trim class="python">
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hola mundo, estas en la vista index.")
+                                    </code>
+                            </pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Las vistas Django</h3>
+                        <div class="left">
+                            <p>http://localhost:8000/</p>
+                            <img src="images/views.png" style="border: 0px;" />
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Los Templates Django</h3>
+                        <div class="fragment left">
+                            <p>views.py</p>
+                            <pre>
+                                <code data-trim class="python">
+def myindex(request):
+    nombre = 'Jorge Hernandez'
+    lista = range(0,100)
+    return render_to_response(
+        'index.html',
+        {'nombre': nombre, 'lista': lista}, 
+        context_instance=RequestContext(request)
+    )
+                                </code>
+                            </pre>
+                            <p>templates/index.html</p>
+                            <pre>
+                                <code data-trim class="html">
+<h1>Este es un template</h1>
+<p>Ejemplo de valor variable: {{ nombre }}</p>
+<p>Lista: </p>
+<ol>
+    {% for elemento in lista  %}
+    <li>{{ elemento }}</li>
+    {% endfor %}
+</ol>
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>El Admin Django</h3>
+                        <div class="fragment left">
+                            <p>admin.py</p>
+                            <pre>
+                                <code data-trim class="python">
+from django import forms
+from django.contrib import admin
+from polls.models import *
+import datetime
+
+class encuestaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'nombre']
+    list_display_links = ['nombre']
+    search_fields = ['id', 'nombre']
+
+class preguntaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'encuesta', 'pregunta_text', 'fecha']
+    list_display_links = ['id']
+    search_fields = ['id', 'encuesta', 'pregunta_text', 'fecha']
+    list_filter = ['fecha']
+
+admin.site.register(encuesta, encuestaAdmin)
+admin.site.register(pregunta, preguntaAdmin)                                
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>El Admin Django</h3>                        
+                        <img src="images/list.png" style="border: 0px;" />
+                    </section>
+                </section>
+                <section>
+                    <h3 class="left">Recomendaciones</h3>
+                    <p class="fragment left indent"><a href="http://south.aeracode.org/">South</a>: Migraciones DB</p>
+                    <p class="fragment left indent"><a href="http://djangosuit.com/">Django-Suit</a>: Interfaz Moderna</p>
+                    <p class="fragment left indent"><a href="http://grappelliproject.com/">Grappelli</a>: Interfaz Moderna</p>
+                    <p class="fragment left indent"><a href="http://django-extensions.readthedocs.org/en/latest/">Django Extensions</a>: Plugins</p>
+                    <p class="fragment left indent"><a href="http://django-debug-toolbar.readthedocs.org/en/1.0/">Django Debug Toolbar</a>: Depuración</p>
+                    <p class="fragment left indent"><a href="https://www.django-cms.org/en/">Django-CMS</a>: CMS personalizable</p>                    
+                    <p class="fragment left indent"><a href="https://www.django-cms.org/en/">Django Rest Framework</a>: API</p>                    
+                    <p class="fragment left indent"><a href="https://github.com/agiliq/Django-Socialauth">Django SocialAuth</a>: Autenticación Social</p>                    
+                </section>
+                <section>
+                    <h1>Gracias.</h1>
+                    <hr/>
+                    <p class="left indent">Twitter: <a href="http://twitter.com/lesthack">@lesthack</a></p>
+                    <p class="left indent">Blog: <a href="http://lesthack.com.mx">lesthack.com.mx</a></p>
+                    <p class="left indent">Email: <a href="emailto: lesthack@gmail.com">lesthack@gmail.com</a></p>
+                    <p class="left indent">Github: <a href="https://github.com/lesthack/">github.com/lesthack</a></p>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+    	controls: true,
+    	progress: true,
+    	history: true,
+    	center: false,
+            slideNumber: true,
+
+    	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    	// Parallax scrolling
+    	// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+    	// parallaxBackgroundSize: '2100px 900px',
+
+    	// Optional libraries used to extend on reveal.js
+    	dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    	]
+            });
+        </script>
+    </body>
+</html>
