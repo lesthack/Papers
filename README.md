@@ -1,4 +1,4 @@
-Conferences
+Papers
 ===========
 
-Conferencias impartidas en varios eventos.
+http://lesthack.github.io/Papers/
